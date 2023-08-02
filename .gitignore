@@ -1,0 +1,9 @@
+*.*
+!*.d
+!README.md
+!.gitignore
+!Makefile
+!makefile.yml
+docs/**
+html/**
+!Doxygen
