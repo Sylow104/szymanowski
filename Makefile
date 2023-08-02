@@ -1,16 +1,14 @@
-CFLAGS=-lgphobos -lgdruntime -g -funittest -Wall -Isrc -fdebug
+CFLAGS=-g -funittest -Wall -fdebug
+CC=gdc
 # https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
 
-FEDORA_UBUNTU := $(shell command -v gdc-12 2> /dev/null)
-ifdef $(FEDORA_UBUNTU)
-CC=gdc-12
-else
-CC=cc
-endif
-
 MATH_SRC=$(shell find szymanowski/math -type f -name "*.d")
+MAIN_SRC=szymanowski/main.d
 
-math.o : $(MATH_SRC)
+szymanowski.out : math.o $(MAIN_SRC)
+	$(CC) $(CFLAGS) $^
+
+math.o : $(MATH_SRC) 
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean :
