@@ -8,7 +8,7 @@ else
 CC=cc
 endif
 
-MATH_SRC=$(shell find src/math -type f -name "*.d")
+MATH_SRC=$(shell find szymanowski/math -type f -name "*.d")
 
 math.o : $(MATH_SRC)
 	$(CC) $(CFLAGS) -c -o $@ $^
