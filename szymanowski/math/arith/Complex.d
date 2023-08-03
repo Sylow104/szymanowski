@@ -2,6 +2,14 @@ module szymanowski.math.arith.Complex;
 import std.math;
 import std.conv;
 
+class ComplexException : Exception
+{
+	this(string func)
+	{
+		super(func ~ " -- exception on Complex struct");
+	};
+};
+
 struct Complex
 {
 	real re = 0;
@@ -196,7 +204,7 @@ struct Complex
 				to_ret.im = ReDiv(this, m);
 				break;
 			default:
-				throw new Exception("Binary error on Complex");
+				throw new ComplexException("opBinary: '" ~ op ~ "'");
 		}
 
 		return to_ret;
@@ -229,7 +237,7 @@ struct Complex
 				im = ImDiv(this, m);
 				break;
 			default:
-				throw new Exception("Assignment error on Complex");
+				throw new ComplexException("opOpAssign: '" ~ op ~ "'");
 		}
 		return this;
 	};
@@ -250,7 +258,7 @@ struct Complex
 				to_ret.im = -im;
 				break;
 			default:
-				throw new Exception("Unary error on Complex");
+				throw new ComplexException("opUnary: '" ~ op ~ "'");
 		}
 		return to_ret;
 	};
