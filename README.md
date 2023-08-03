@@ -15,7 +15,7 @@ Main porter:
 Sylow104
 
 Main developer:
-Gérard Milmeister <milmei@ifi.unizh.ch>
+Gérard Milmeister
 
 Contributing developers:
 Stefan Müller
