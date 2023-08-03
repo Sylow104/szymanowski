@@ -1,5 +1,7 @@
 module szymanowski.math.arith.matrix;
 
+// TODO: use templateing for matrix unless the rings have different 
+// implementations;
 class Matrix
 {
 	public:
