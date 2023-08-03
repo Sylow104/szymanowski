@@ -5,7 +5,7 @@ CC=gdc
 MATH_SRC=$(shell find szymanowski/math -type f -name "*.d")
 MAIN_SRC=szymanowski/main.d
 
-szymanowski.out : math.o $(MAIN_SRC)
+a.out : math.o $(MAIN_SRC)
 	$(CC) $(CFLAGS) $^
 
 math.o : $(MATH_SRC) 
