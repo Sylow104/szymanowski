@@ -1,5 +1,4 @@
-CFLAGS=-g -funittest -Wall -fdebug
-CC=gdc
+CFLAGS=-lgphobos -lm -g -funittest -Wall -fdebug
 # https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
 
 MATH_SRC=$(shell find szymanowski/math -type f -name "*.d")
